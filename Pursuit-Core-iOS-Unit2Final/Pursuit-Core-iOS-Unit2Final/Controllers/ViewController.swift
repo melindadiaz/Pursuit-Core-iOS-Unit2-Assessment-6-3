@@ -50,8 +50,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                   ColorViewController,
                   let indexPath = crayonTableView.indexPathForSelectedRow else {
                       return
-              }
+    }
         colorView.navigationItem.title = crayonReference[indexPath.row].name
+        colorView.crayon = crayonReference[indexPath.row]
      
     }
     

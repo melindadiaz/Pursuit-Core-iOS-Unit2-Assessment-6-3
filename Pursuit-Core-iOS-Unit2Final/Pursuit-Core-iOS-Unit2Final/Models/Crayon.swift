@@ -26,7 +26,7 @@ class Crayon {
     Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
     Crayon(name: "Apricot", red: 253, green: 217, blue: 181, hex: "#FDD9B5"),
     Crayon(name: "Aquamarine", red: 120, green: 219, blue: 226, hex: "#78DBE2"),
-    Crayon(name: "Asparagus", red: 135, green:  169, blue: 107, hex: "#87A96B"),
+    Crayon(name: "A  sparagus", red: 135, green: 169, blue: 107, hex: "#87A96B"),
     Crayon(name: "Atomic Tangerine", red: 255, green: 164, blue: 116, hex: "#FFA474"),
     Crayon(name: "Banana Mania", red: 250, green: 231, blue: 181, hex: "#FAE7B5"),
     Crayon(name: "Beaver", red: 159, green: 129, blue:  112, hex: "#9F8170"),

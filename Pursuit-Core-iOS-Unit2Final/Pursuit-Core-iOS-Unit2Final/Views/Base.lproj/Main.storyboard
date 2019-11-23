@@ -109,7 +109,7 @@
                                 <rect key="frame" x="96" y="196" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="colorVarySlider:" destination="2qC-W3-hAU" eventType="valueChanged" id="J50-Ud-yJY"/>
+                                    <action selector="colorVarySlider:" destination="2qC-W3-hAU" eventType="valueChanged" id="E7f-Sh-AmE"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -120,7 +120,7 @@
                     <connections>
                         <outlet property="alphaStepper" destination="ESV-FF-oDr" id="hnL-yb-iJS"/>
                         <outlet property="colorLabel" destination="SNW-XP-XYF" id="dvd-Cb-awH"/>
-                        <outlet property="colorVarySlider" destination="iSv-Xb-Uj7" id="Yvx-gW-Ype"/>
+                        <outlet property="colorSlider" destination="iSv-Xb-Uj7" id="YW8-bF-564"/>
                         <outlet property="stepperLabel" destination="6gu-DN-MK2" id="5zC-mg-veP"/>
                     </connections>
                 </viewController>
