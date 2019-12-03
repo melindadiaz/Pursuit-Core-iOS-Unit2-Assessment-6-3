@@ -10,45 +10,50 @@ import UIKit
 
 class ColorViewController: UIViewController, UITableViewDelegate {
     
+    @IBOutlet weak var greenValueOutlet: UISlider!
+    @IBOutlet weak var blueValueOutlet: UISlider!
+    @IBOutlet weak var redValueOutlet: UISlider!
+    @IBOutlet weak var redColorLabel: UILabel!
+    @IBOutlet weak var greenColorLabel: UILabel!
+    @IBOutlet weak var blueColorLabel: UILabel!
+    @IBOutlet weak var stepperLabel: UILabel!
+    @IBOutlet weak var alphaStepperOutlet: UIStepper!
+    
     var crayon:Crayon!
 
-    @IBOutlet weak var colorLabel: UILabel!
-    
-    @IBOutlet weak var stepperLabel: UILabel!
-    
-   
-    @IBOutlet weak var colorSlider: UISlider!
-    
-    
-    
-    @IBOutlet weak var alphaStepper: UIStepper!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorSlider.value = Float(crayon.red)
-        
-        
+        updateBackgroundColor()
+        setSliderValue()
     }
     
     
-    
-    @IBAction func colorVarySlider(_ sender: UISlider) {
-        colorLabel.text = String(colorSlider.value)
-        self.view.backgroundColor = UIColor(red: CGFloat(colorSlider.value/255), green: CGFloat(colorSlider.value/255), blue: CGFloat(colorSlider.value/255), alpha: 1)
+    @IBAction func colorValueSlider(_ sender: UISlider) {
+        view.backgroundColor = UIColor(red: CGFloat(redValueOutlet!.value), green: CGFloat(greenValueOutlet!.value), blue: CGFloat(blueValueOutlet!.value), alpha: CGFloat(alphaStepperOutlet.value))
     }
+
     
     @IBAction func alphaStepper(_ sender: UIStepper) {
-      //  self.view.backgroundColor = UICol
+        view.backgroundColor = UIColor(red: CGFloat(redValueOutlet!.value), green: CGFloat(greenValueOutlet!.value), blue: CGFloat(blueValueOutlet!.value), alpha: CGFloat(sender.value))
+
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
+        updateBackgroundColor()
+  setSliderValue()
+
     }
     
     
-//
-//    private func updateBackgroundColor() {
-//           self.view.backgroundColor = UIColor
-          // }
+    func updateBackgroundColor() {
+        view.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+    }
+    
+    func setSliderValue() {
+        redValueOutlet.value = Float(crayon.red/255)
+        blueValueOutlet.value = Float(crayon.blue/255)
+        greenValueOutlet.value = Float(crayon.green/255)
+    }
 }
 
