@@ -7,6 +7,8 @@
 //
 
 import UIKit
+// display number value for sliders/stepper and fix black
+
 
 class ColorViewController: UIViewController, UITableViewDelegate {
     
@@ -20,7 +22,7 @@ class ColorViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var alphaStepperOutlet: UIStepper!
     
     var crayon:Crayon!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,20 +33,21 @@ class ColorViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func colorValueSlider(_ sender: UISlider) {
         view.backgroundColor = UIColor(red: CGFloat(redValueOutlet!.value), green: CGFloat(greenValueOutlet!.value), blue: CGFloat(blueValueOutlet!.value), alpha: CGFloat(alphaStepperOutlet.value))
+        redColorLabel.text = redValueOutlet.value.description
+        blueColorLabel.text = blueValueOutlet.value.description
+        greenColorLabel.text = greenValueOutlet.value.description
     }
-
     
     @IBAction func alphaStepper(_ sender: UIStepper) {
         view.backgroundColor = UIColor(red: CGFloat(redValueOutlet!.value), green: CGFloat(greenValueOutlet!.value), blue: CGFloat(blueValueOutlet!.value), alpha: CGFloat(sender.value))
-
+        
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
         updateBackgroundColor()
-  setSliderValue()
-
+        setSliderValue()
+        
     }
-    
     
     func updateBackgroundColor() {
         view.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
